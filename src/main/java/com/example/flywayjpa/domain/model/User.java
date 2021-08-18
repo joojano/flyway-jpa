@@ -14,7 +14,7 @@ import javax.persistence.Id;
 import java.util.UUID;
 
 
-@Entity(name = "USER")
+@Entity(name = "tbuser")
 @Getter
 @Setter
 public class User {
@@ -25,7 +25,7 @@ public class User {
             strategy = "org.hibernate.id.UUIDGenerator"
     )
     @Column(name = "ID", updatable = false, nullable = false)
-    @ColumnDefault("random_uuid()")
+    @ColumnDefault("gen_random_uuid()")
     @Type(type = "uuid-char")
     @NonNull
     private UUID id;

@@ -1,0 +1,20 @@
+version: "3.3"
+services:
+  api:
+    container_name: api_flyway
+    image: ghcr.io/joojano/flyway-api:latest
+    ports:
+      - "10000:10000"
+    depends_on:
+      - db_flyway
+    network_mode: host
+  db_flyway:
+    container_name: db_flyway
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=database
+    network_mode: host

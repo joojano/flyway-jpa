@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <start-class>com.example.flywayjpa.FlywayJpaApplication</start-class>
     </properties>
 
     <dependencies>
@@ -24,8 +25,8 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -55,18 +56,21 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <mainClass>com.example.flywayjpa.FlywayJpaApplication</mainClass>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>7.1.1</version>
                 <configuration>
-                    <url>jdbc:h2:file:./target/database;AUTO_SERVER=TRUE</url>
-                    <user>test</user>
+                    <url>jdbc:postgresql://localhost:5432/database</url>
+                    <user>user</user>
                     <password>password</password>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
