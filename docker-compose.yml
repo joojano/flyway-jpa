@@ -2,7 +2,7 @@ version: "3.3"
 services:
   api:
     container_name: api_flyway
-    image: ghcr.io/joojano/flyway-api:latest
+    image: ghcr.io/joojano/flyway-jpa/flyway-api:latest
     ports:
       - "10000:10000"
     depends_on:
