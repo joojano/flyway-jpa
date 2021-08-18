@@ -59,7 +59,7 @@ Em seguida, execute o seguinte comando:
 ```docker-compose up -d```
 
 Após a execução bem sucedida, você poderá acessar a API no endereço http://localhost:10000 e o banco de dados no 
-endereço localhost:5440.
+endereço localhost:5432.
 
 <a name="executando-migrations"/>
 
