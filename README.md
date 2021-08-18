@@ -37,10 +37,13 @@ API REST básica para inserir e consultar usuários em um sistema, com ferrament
 - Docker v20.10.8
 
 <a name="rodar"/>
+
 ## Como rodar a aplicação?
 
 <a name="dependencias"/>
+
 ### Itens necessários
+
 - [Docker](https://docs.docker.com/desktop/);
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
